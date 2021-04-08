@@ -9,6 +9,30 @@ This library is inspired by Toast of Reddit android app. You can use this Toast 
 
 It takes  your app icon as your default icon, you can change the icon passing drawable or resource Id in parameter.
 
+## Prerequisites
+
+Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+
+```gradle
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+## Dependency
+
+Add this to your module's `build.gradle` file (make sure the version matches the JitPack badge above):
+
+```gradle
+dependencies {
+	...
+  implementation 'com.github.sinnercoder:RedditToast:1.1'
+}
+```
+
 ## RedditToast Configuration
 You can Configure your Toast, but this is  optional. You can use it anywhere in your code:
 ```java
