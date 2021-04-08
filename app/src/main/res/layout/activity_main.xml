@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/defaultToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:textAllCaps="false"
+        android:text="Default Toast"/>
+
+    <Button
+        android:id="@+id/successToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/defaultToast"
+        android:textAllCaps="false"
+        android:text="Success Toast"/>
+
+    <Button
+        android:id="@+id/errorToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/successToast"
+        android:textAllCaps="false"
+        android:text="Error Toast"/>
+
+    <Button
+        android:id="@+id/infoToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/errorToast"
+        android:textAllCaps="false"
+        android:text="Info Toast"/>
+
+    <Button
+        android:id="@+id/warningToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/infoToast"
+        android:textAllCaps="false"
+        android:text="Warning Toast"/>
+
+    <Button
+        android:id="@+id/iconToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/warningToast"
+        android:textAllCaps="false"
+        android:text="Toast with custom icon"/>
+
+    <Button
+        android:id="@+id/noIconToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/iconToast"
+        android:textAllCaps="false"
+        android:text="Toast with no Icon"/>
+
+    <Button
+        android:id="@+id/bgChangeToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/noIconToast"
+        android:textAllCaps="false"
+        android:text="Toast with Background Change"/>
+
+    <Button
+        android:id="@+id/fontChangeToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/bgChangeToast"
+        android:textAllCaps="false"
+        android:text="Toast with new custom Font"/>
+
+
+</RelativeLayout>
