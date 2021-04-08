@@ -29,59 +29,71 @@ public class RedditToast {
     private static boolean useIcon = true;
     private static int duration = LENGTH_SHORT;
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg) {
-        makeToast(context, toastMsg, null, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg) {
+        return customToast(context, toastMsg, null, ToastType.DEFAULT);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg) {
-        makeToast(context, context.getString(toastMsg), null, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg) {
+        return customToast(context, context.getString(toastMsg), null, ToastType.DEFAULT);
     }
 
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg, ToastType type) {
-        makeToast(context, toastMsg, null, type);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg,
+                          ToastType type) {
+        return customToast(context, toastMsg, null, type);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg, ToastType type) {
-        makeToast(context, context.getString(toastMsg), null, type);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg,
+                                 ToastType type) {
+        return customToast(context, context.getString(toastMsg), null, type);
     }
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg, Drawable icon) {
-        makeToast(context, toastMsg, icon, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg,
+                           Drawable icon) {
+        return customToast(context, toastMsg, icon, ToastType.DEFAULT);
     }
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg, @DrawableRes int icon) {
-        makeToast(context, toastMsg, icon, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg,
+                         @DrawableRes int icon) {
+        return customToast(context, toastMsg, icon, ToastType.DEFAULT);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg, Drawable icon) {
-        makeToast(context, context.getString(toastMsg), icon, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg,
+                                  Drawable icon) {
+        return customToast(context, context.getString(toastMsg), icon, ToastType.DEFAULT);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg, @DrawableRes int icon) {
-        makeToast(context, context.getString(toastMsg), icon, ToastType.DEFAULT);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg,
+                          @DrawableRes int icon) {
+        return customToast(context, context.getString(toastMsg), icon, ToastType.DEFAULT);
     }
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg, Drawable icon, ToastType type) {
-        makeToast(context, toastMsg, icon, type);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg,
+                             Drawable icon,
+                         ToastType type) {
+        return customToast(context, toastMsg, icon, type);
     }
 
-    public static void show(@NonNull Context context, @NonNull CharSequence toastMsg, @DrawableRes int icon, ToastType type) {
-        makeToast(context, toastMsg, icon, type);
+    public static Toast makeToast(@NonNull Context context, @NonNull CharSequence toastMsg,
+                         @DrawableRes int icon, ToastType type) {
+        return customToast(context, toastMsg, icon, type);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg, Drawable icon, ToastType type) {
-        makeToast(context, context.getString(toastMsg), icon, type);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg, Drawable icon,
+                         ToastType type) {
+        return customToast(context, context.getString(toastMsg), icon, type);
     }
 
-    public static void show(@NonNull Context context, @StringRes int toastMsg, @DrawableRes int icon, ToastType type) {
-        makeToast(context, context.getString(toastMsg), icon, type);
+    public static Toast makeToast(@NonNull Context context, @StringRes int toastMsg,
+                             @DrawableRes int icon
+            , ToastType type) {
+        return customToast(context, context.getString(toastMsg), icon, type);
     }
 
-    private static void makeToast(Context context, CharSequence toastMsg, Drawable icon,
-                                   ToastType type) {
+    private static Toast customToast(Context context, CharSequence toastMsg, Drawable icon,
+                                     ToastType type) {
         Toast toast = new Toast(context);
-        ImageView iconImageView = _makeToast(context, toast, toastMsg, type);
+        ImageView iconImageView = _customToast(context, toast, toastMsg, type);
         if(useIcon) {
             iconImageView.setVisibility(View.VISIBLE);
             if (icon == null)
@@ -91,13 +103,13 @@ public class RedditToast {
         } else {
             iconImageView.setVisibility(View.GONE);
         }
-        toast.show();
+        return toast;
     }
 
-    private static void makeToast(Context context, CharSequence toastMsg, int icon,
-                                  ToastType type) {
+    private static Toast customToast(Context context, CharSequence toastMsg, int icon,
+                                     ToastType type) {
         Toast toast = new Toast(context);
-        ImageView iconImageView = _makeToast(context, toast, toastMsg, type);
+        ImageView iconImageView = _customToast(context, toast, toastMsg, type);
         if(useIcon) {
             iconImageView.setVisibility(View.VISIBLE);
             if (icon == 0)
@@ -107,11 +119,11 @@ public class RedditToast {
         } else {
             iconImageView.setVisibility(View.GONE);
         }
-        toast.show();
+        return toast;
     }
 
-    private static ImageView _makeToast(Context context, Toast toast, CharSequence toastMsg,
-                                    ToastType type) {
+    private static ImageView _customToast(Context context, Toast toast, CharSequence toastMsg,
+                                          ToastType type) {
         LayoutInflater inflater =
                 ((LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE));
         View layout = inflater.inflate(R.layout.toast_layout,null);
@@ -149,7 +161,6 @@ public class RedditToast {
 
         toast.setDuration(duration);
         toast.setView(layout);
-        toast.show();
         return iconImageView;
     }
 
