@@ -1,6 +1,6 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.SinnerCoder'
 
 android {
     compileSdkVersion 30

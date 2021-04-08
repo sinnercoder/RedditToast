@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+
 import com.toast.reddittoast.RedditToast;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,9 +21,8 @@ public class MainActivity extends AppCompatActivity {
                 .setTextSize(16)
                 .setUseIcon(true)
                 .commit();
-        findViewById(R.id.defaultToast).setOnClickListener(v -> RedditToast.makeToast(MainActivity.this,
-                "This is default toast!",
-                RedditToast.ToastType.DEFAULT).show());
+        findViewById(R.id.defaultToast).setOnClickListener(v ->
+                RedditToast.makeToast(MainActivity.this, "This is default toast!", RedditToast.ToastType.DEFAULT).show());
 
         findViewById(R.id.successToast).setOnClickListener(v -> RedditToast.makeToast(MainActivity.this,
                 "This is success toast!",
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                     R.drawable.robot, RedditToast.ToastType.WARNING).show();
             RedditToast.RedditToastConfiguration.resetConfiguration();
         });
+
+        RedditToast.RedditToastConfiguration.resetConfiguration();
 
     }
 }
